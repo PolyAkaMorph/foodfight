@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "USER")
 public class User extends AbstractEntity {
 
     @Column(name = "is_admin",nullable = false)
