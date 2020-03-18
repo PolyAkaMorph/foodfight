@@ -1,0 +1,5 @@
+ru\foodfight\service\UserService.class
+ru\foodfight\model\User.class
+ru\foodfight\model\AbstractEntity.class
+ru\foodfight\Main.class
+ru\foodfight\repository\UserRepository.class
