@@ -8,6 +8,8 @@ import ru.foodfight.model.User;
 import ru.foodfight.repository.UserRepository;
 import ru.foodfight.service.UserService;
 
+import java.util.Optional;
+
 public class Main {
     static Logger logger = LoggerFactory.getLogger(Main.class);
     public static void main(String[] args) {
@@ -15,16 +17,10 @@ public class Main {
 
         ConfigurableApplicationContext appCtx = new ClassPathXmlApplicationContext(
                 "spring/spring-app.xml",
-                                "spring/spring-db.xml",
-                "persistence.xml");
+                                "spring/spring-db.xml");
+//        UserRepository userRepository = appCtx.getBean(UserRepository.class);
+//        System.out.println("Found by getOne" + userRepository.getOne(10000));
         UserService userService = appCtx.getBean(UserService.class);
-        User user = userService.get(10000);
-        System.out.println(user);
-        UserRepository userRepository = appCtx.getBean(UserRepository.class);
-        if (null == user) {
-            System.out.println("meow");
-        }
-
-        System.out.println("hi");
+        System.out.println(userService.get(10000));
     }
 }

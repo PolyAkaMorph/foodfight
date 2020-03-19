@@ -1,2 +1,2 @@
-insert into user (name, IS_ADMIN) values ('abc', 0);
-insert into user (name, IS_ADMIN) values ('cbd', 0);
+INSERT INTO USER (name, IS_ADMIN) VALUES ('abc', 0);
+INSERT INTO USER (name, IS_ADMIN) VALUES ('cbd', 0)

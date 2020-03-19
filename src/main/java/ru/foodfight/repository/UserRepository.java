@@ -1,9 +1,9 @@
 package ru.foodfight.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import ru.foodfight.model.User;
-import org.springframework.data.repository.CrudRepository;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
 }

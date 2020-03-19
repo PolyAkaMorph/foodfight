@@ -30,6 +30,7 @@ public class UserServiceTest {
     @Test
     public void getOne() {
         User user = userService.get(UserServiceTestUtils.START_SEQ);
+        Assert.assertNotNull(user);
         Assert.assertTrue(UserServiceTestUtils.compare(user, UserServiceTestUtils.user1));
     }
 }
