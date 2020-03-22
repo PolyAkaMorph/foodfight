@@ -1,5 +1,8 @@
-ru\foodfight\service\UserService.class
 ru\foodfight\model\User.class
 ru\foodfight\model\AbstractEntity.class
+ru\foodfight\model\Vote.class
+ru\foodfight\service\UserService.class
+ru\foodfight\repository\VoteRepository.class
+ru\foodfight\service\VoteService.class
 ru\foodfight\Main.class
 ru\foodfight\repository\UserRepository.class

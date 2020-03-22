@@ -3,14 +3,13 @@ package ru.foodfight.service;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.slf4j.Logger;
-import ru.foodfight.model.User;
-
+import ru.foodfight.model.Vote;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -20,24 +19,22 @@ import static org.slf4j.LoggerFactory.getLogger;
 })
 @RunWith(SpringRunner.class)
 @Sql(scripts = "classpath:/db/populate.sql", config = @SqlConfig(encoding = "UTF-8"))
-public class UserServiceTest {
+public class VoteServiceTest {
     private static final Logger log = getLogger("result");
 
     @Autowired
-    UserService userService;
-
+    VoteService voteService;
     @Test
     public void getOne() {
-        User user = userService.get(UserServiceTestUtils.START_SEQ);
-        Assert.assertNotNull(user);
-        Assert.assertTrue(UserServiceTestUtils.compare(user, UserServiceTestUtils.user1));
+        Vote vote = voteService.get(UserServiceTestUtils.START_SEQ + 2);
+        Assert.assertNotNull(vote);
+        Assert.assertEquals(vote, UserServiceTestUtils.vote1);
     }
 
     @Test
     public void deleteOne() {
-        userService.delete(UserServiceTestUtils.START_SEQ);
-        Assert.assertNull(userService.get(UserServiceTestUtils.START_SEQ));
+        voteService.delete(UserServiceTestUtils.START_SEQ + 2);
+        Assert.assertNull(voteService.get(UserServiceTestUtils.START_SEQ + 2));
     }
-
 
 }
