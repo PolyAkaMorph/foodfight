@@ -28,7 +28,7 @@ public class VoteServiceTest {
     public void getOne() {
         Vote vote = voteService.get(UserServiceTestUtils.START_SEQ + 2);
         Assert.assertNotNull(vote);
-        Assert.assertEquals(vote, UserServiceTestUtils.vote1);
+        Assert.assertTrue(UserServiceTestUtils.compare(vote, UserServiceTestUtils.vote1));
     }
 
     @Test

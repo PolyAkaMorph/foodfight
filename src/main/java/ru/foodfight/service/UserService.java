@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.foodfight.model.User;
 import ru.foodfight.repository.UserRepository;
 
-import java.util.Optional;
+import javax.persistence.EntityManager;
 
 @Service
 @Transactional(readOnly = true)
@@ -14,8 +14,10 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    EntityManager entityManager;
 
-    public User get(int id) {
+    public User get(Integer id) {
         return userRepository.findById(id).orElse(null);
     }
 
@@ -23,7 +25,7 @@ public class UserService {
         userRepository.delete(user);
     }
 
-    public void delete(int id) {
+    public void delete(Integer id) {
         userRepository.deleteById(id);
     }
 

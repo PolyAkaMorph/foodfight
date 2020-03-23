@@ -10,10 +10,10 @@ public class Vote extends AbstractEntity {
     @JoinColumn(name = "id_user", nullable = false)
     private User user;
 
-    @Column(name = "ID_RESTARAUNT", nullable = false)
+    @Column(name = "id_restaurant", nullable = false)
     private Integer idRest;
 
-    @Column(name = "VOTE_TIME", nullable = false)
+    @Column(name = "vote_time", nullable = false)
     private LocalDateTime voteTime;
 
     public Vote(Integer id, User user, Integer idRest, LocalDateTime voteTime) {

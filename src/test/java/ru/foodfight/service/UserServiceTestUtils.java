@@ -26,6 +26,7 @@ public class UserServiceTestUtils {
         }
     }
 
+    //compares user_id, not user
     public static boolean compare(Vote vote1, Vote vote2) {
         try {
             return vote1.getId().equals(vote2.getId()) &&

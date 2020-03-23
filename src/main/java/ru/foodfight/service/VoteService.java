@@ -13,7 +13,7 @@ public class VoteService {
     private VoteRepository voteRepository;
 
     public Vote get(Integer id) {
-        return voteRepository.getOne(id);
+        return voteRepository.findById(id).orElse(null);
     }
 
     public void delete(Vote vote) {
