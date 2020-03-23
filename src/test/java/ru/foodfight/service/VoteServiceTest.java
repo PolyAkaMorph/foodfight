@@ -26,15 +26,15 @@ public class VoteServiceTest {
     VoteService voteService;
     @Test
     public void getOne() {
-        Vote vote = voteService.get(UserServiceTestUtils.START_SEQ + 2);
+        Vote vote = voteService.get(UserServiceTestUtils.START_SEQ + 4);
         Assert.assertNotNull(vote);
         Assert.assertTrue(UserServiceTestUtils.compare(vote, UserServiceTestUtils.vote1));
     }
 
     @Test
     public void deleteOne() {
-        voteService.delete(UserServiceTestUtils.START_SEQ + 2);
-        Assert.assertNull(voteService.get(UserServiceTestUtils.START_SEQ + 2));
+        voteService.delete(UserServiceTestUtils.START_SEQ + 4);
+        Assert.assertNull(voteService.get(UserServiceTestUtils.START_SEQ + 4));
     }
 
 }

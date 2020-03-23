@@ -6,3 +6,5 @@ D:\_JavaProjects\foodfight_run\foodfight\src\main\java\ru\foodfight\model\Abstra
 D:\_JavaProjects\foodfight_run\foodfight\src\main\java\ru\foodfight\service\UserService.java
 D:\_JavaProjects\foodfight_run\foodfight\src\main\java\ru\foodfight\model\User.java
 D:\_JavaProjects\foodfight_run\foodfight\src\main\java\ru\foodfight\model\Vote.java
+D:\_JavaProjects\foodfight_run\foodfight\src\main\java\ru\foodfight\repository\RestaurantRepository.java
+D:\_JavaProjects\foodfight_run\foodfight\src\main\java\ru\foodfight\model\Restaurant.java

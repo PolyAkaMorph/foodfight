@@ -13,8 +13,8 @@ public class UserServiceTestUtils {
     public static User user1 = new User(START_SEQ, 0, "John");
     public static User user2 = new User(START_SEQ + 1, 0, "Sara");
 
-    public static Vote vote1 = new Vote(START_SEQ + 2, user1, 10010, LocalDateTime.parse("2020-03-22 10:00:00", formatter));
-    public static Vote vote2 = new Vote(START_SEQ + 3, user2, 10011, LocalDateTime.parse("2020-03-22 10:30:00", formatter));
+    public static Vote vote1 = new Vote(START_SEQ + 4, user1, null, LocalDateTime.parse("2020-03-22 10:00:00", formatter));
+    public static Vote vote2 = new Vote(START_SEQ + 5, user2, null, LocalDateTime.parse("2020-03-22 10:30:00", formatter));
 
     public static boolean compare(User user1, User user2) {
         try {
@@ -30,8 +30,6 @@ public class UserServiceTestUtils {
     public static boolean compare(Vote vote1, Vote vote2) {
         try {
             return vote1.getId().equals(vote2.getId()) &&
-                    vote1.getIdRest().equals(vote2.getIdRest()) &&
-                    vote1.getUser().getId().equals(vote2.getUser().getId()) &&
                     vote1.getVoteTime().equals(vote2.getVoteTime());
         } catch (NullPointerException e) {
             return false;

@@ -4,22 +4,23 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "VOTE")
+@Table(name = "vote")
 public class Vote extends AbstractEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_user", nullable = false)
     private User user;
 
-    @Column(name = "id_restaurant", nullable = false)
-    private Integer idRest;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_restaurant", nullable = false)
+    private Restaurant restaraunt;
 
     @Column(name = "vote_time", nullable = false)
     private LocalDateTime voteTime;
 
-    public Vote(Integer id, User user, Integer idRest, LocalDateTime voteTime) {
+    public Vote(Integer id, User user, Restaurant restaraunt, LocalDateTime voteTime) {
         super(id);
         this.user = user;
-        this.idRest = idRest;
+        this.restaraunt = restaraunt;
         this.voteTime = voteTime;
     }
 
@@ -34,12 +35,12 @@ public class Vote extends AbstractEntity {
         this.user = user;
     }
 
-    public Integer getIdRest() {
-        return idRest;
+    public Restaurant getRestaraunt() {
+        return restaraunt;
     }
 
-    public void setIdRest(Integer idRest) {
-        this.idRest = idRest;
+    public void setRestaraunt(Restaurant idRest) {
+        this.restaraunt = idRest;
     }
 
     public LocalDateTime getVoteTime() {
