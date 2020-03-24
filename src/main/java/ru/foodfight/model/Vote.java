@@ -12,16 +12,20 @@ public class Vote extends AbstractEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_restaurant", nullable = false)
-    private Restaurant restaraunt;
+    private Restaurant restaurant;
 
-    @Column(name = "vote_time", nullable = false)
+    @Column(name = "vote_date", nullable = false)
     private LocalDateTime voteTime;
 
-    public Vote(Integer id, User user, Restaurant restaraunt, LocalDateTime voteTime) {
+    public Vote(Integer id, User user, Restaurant restaurant, LocalDateTime voteTime) {
         super(id);
         this.user = user;
-        this.restaraunt = restaraunt;
+        this.restaurant = restaurant;
         this.voteTime = voteTime;
+    }
+
+    public Vote(Vote vote) {
+        this(vote.getId(), vote.getUser(), vote.getRestaurant(), vote.getVoteTime());
     }
 
     public Vote() {
@@ -35,12 +39,12 @@ public class Vote extends AbstractEntity {
         this.user = user;
     }
 
-    public Restaurant getRestaraunt() {
-        return restaraunt;
+    public Restaurant getRestaurant() {
+        return restaurant;
     }
 
-    public void setRestaraunt(Restaurant idRest) {
-        this.restaraunt = idRest;
+    public void setRestaurant(Restaurant idRest) {
+        this.restaurant = idRest;
     }
 
     public LocalDateTime getVoteTime() {
