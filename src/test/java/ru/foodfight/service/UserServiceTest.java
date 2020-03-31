@@ -28,15 +28,15 @@ public class UserServiceTest {
 
     @Test
     public void getOne() {
-        User user = userService.get(UserServiceTestUtils.START_SEQ);
+        User user = userService.get(TestUtils.START_SEQ);
         Assert.assertNotNull(user);
-        Assert.assertTrue(UserServiceTestUtils.compare(user, UserServiceTestUtils.user1));
+        Assert.assertTrue(TestUtils.compare(user, TestUtils.user1));
     }
 
     @Test
     public void deleteOne() {
-        userService.delete(UserServiceTestUtils.START_SEQ);
-        Assert.assertNull(userService.get(UserServiceTestUtils.START_SEQ));
+        userService.delete(TestUtils.START_SEQ);
+        Assert.assertNull(userService.get(TestUtils.START_SEQ));
     }
 
 

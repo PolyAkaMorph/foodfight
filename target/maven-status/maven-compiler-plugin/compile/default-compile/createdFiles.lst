@@ -1,12 +1,16 @@
 ru\foodfight\model\Menu.class
 ru\foodfight\model\User.class
 ru\foodfight\model\AbstractEntity.class
-ru\foodfight\dto\NewMenuDTO.class
 ru\foodfight\model\Vote.class
 ru\foodfight\dto\RestaurantDTO.class
+ru\foodfight\service\UpdateContentService.class
+ru\foodfight\dto\MenuDTO.class
 ru\foodfight\model\Restaurant.class
+ru\foodfight\service\UserService.class
+ru\foodfight\repository\MenuRepository.class
 ru\foodfight\dto\MealDTO.class
 ru\foodfight\repository\RestaurantRepository.class
 ru\foodfight\repository\VoteRepository.class
+ru\foodfight\service\VoteService.class
 ru\foodfight\Main.class
 ru\foodfight\repository\UserRepository.class
